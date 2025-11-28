@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-5.0.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1764297269142-1" author="chbnt">
+        <createTable tableName="deal">
+            <column name="id" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_deal"/>
+            </column>
+            <column name="deal_unique_id" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="from_currency" type="VARCHAR(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="to_currency" type="VARCHAR(3)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="deal_timestamp" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="DECIMAL(20, 6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
